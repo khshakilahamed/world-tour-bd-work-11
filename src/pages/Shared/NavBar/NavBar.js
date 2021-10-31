@@ -24,12 +24,21 @@ const NavBar = () => {
                                 <Nav.Link >
                                     <Link to="/services" className="navItems">Services</Link>
                                 </Nav.Link>
-                                <Nav.Link >
-                                    <Link to="/packages" className="navItems">Packages</Link>
-                                </Nav.Link>
-                                <Nav.Link >
-                                    <Link to="/myOrders" className="navItems">My Orders</Link>
-                                </Nav.Link>
+                                {
+                                    user?.email && <Nav.Link >
+                                        <Link to="/myOrders" className="navItems">My Orders</Link>
+                                    </Nav.Link>
+                                }
+                                {
+                                    user?.email && <Nav.Link >
+                                        <Link to="/manageAllOrders" className="navItems">Manage All Orders</Link>
+                                    </Nav.Link>
+                                }
+                                {
+                                    user?.email && <Nav.Link >
+                                        <Link to="/addNewService" className="navItems">Add New Service</Link>
+                                    </Nav.Link>
+                                }
                                 <Nav.Link >
                                     <Link to="/about" className="navItems">About</Link>
                                 </Nav.Link>

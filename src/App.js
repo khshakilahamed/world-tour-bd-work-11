@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import ServiceDetails from './pages/ServiceDetails/ServiceDetails';
+import ConfirmOrder from './pages/ConfirmBooking/ConfirmBooking';
 
 function App() {
   return (
@@ -28,8 +29,11 @@ function App() {
             <PrivateRoute exact path="/services">
               <Services></Services>
             </PrivateRoute>
-            <Route path="/services/:id">
+            <Route exact path="/services/:id">
               <ServiceDetails></ServiceDetails>
+            </Route>
+            <Route path="/services/confrimOrder/:id">
+              <ConfirmOrder></ConfirmOrder>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

@@ -13,7 +13,6 @@ const Services = () => {
     }, []);
     return (
         <div>
-            <NavBar></NavBar>
             <div className="container my-5">
                 <div className="text-center">
                     <h2>Our Services</h2>
@@ -37,7 +36,9 @@ const Services = () => {
                                             <p className="see-more"><span style={{ fontSize: '20px' }}>see more </span><i class="fas fa-arrow-right"></i></p>
                                         </Link>
                                     </div>
-                                    <button className="btn btn-warning mb-3">Enroll Now</button>
+                                    <Link to={`/services/confrimOrder/${service._id}`}>
+                                        <button className="btn btn-warning mb-3">Booking Now</button>
+                                    </Link>
                                 </div>
                             </div>
                             )

@@ -24,7 +24,7 @@ const ServiceDetails = () => {
                         </div>
                         <div className="d-flex justify-content-between">
                             <h2>{service.title}</h2>
-                            <button className="btn btn-warning">Enroll now</button>
+                            <button className="btn btn-warning">Booking now</button>
                         </div>
                         <div className="my-4">
                             <h4>Description: </h4>
