@@ -28,7 +28,7 @@ const NavBar = () => {
                                     <Link to="/packages" className="navItems">Packages</Link>
                                 </Nav.Link>
                                 <Nav.Link >
-                                    <Link to="/blogs" className="navItems">Blogs</Link>
+                                    <Link to="/myOrders" className="navItems">My Orders</Link>
                                 </Nav.Link>
                                 <Nav.Link >
                                     <Link to="/about" className="navItems">About</Link>
@@ -39,12 +39,12 @@ const NavBar = () => {
                                 user.email ? (
                                     <div>
                                         <Navbar.Text className="text-dark">Hello, {user?.displayName}</Navbar.Text>
-                                        <button className="btn btn-dark ms-2 login-register-btn" onClick={logOut}>logout</button>
+                                        <button className="btn btn-warning ms-2 login-register-btn" onClick={logOut}>logout</button>
                                     </div>
                                 ) : (
                                     <Nav.Link >
                                         <Link to="/login">
-                                            <button className="btn btn-dark login-register-btn" >Login</button>
+                                            <button className="btn btn-warning login-register-btn" >Login</button>
                                         </Link>
                                     </Nav.Link>
                                 )

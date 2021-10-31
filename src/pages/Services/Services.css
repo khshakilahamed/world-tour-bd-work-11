@@ -1,0 +1,8 @@
+.see-more{
+    color: rgb(70, 70, 209);
+    cursor: pointer;
+}
+.see-more:hover{
+    color: rgb(1, 1, 92);
+    text-decoration: underline;
+}
