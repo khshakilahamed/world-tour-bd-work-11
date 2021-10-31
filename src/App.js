@@ -12,6 +12,8 @@ import ServiceDetails from './pages/ServiceDetails/ServiceDetails';
 import ConfirmOrder from './pages/ConfirmBooking/ConfirmBooking';
 import AddNewService from './pages/AddNewService/AddNewService';
 import ManageAllOrders from './pages/ManageAllOrders/ManageAllOrders';
+import MyOrders from './pages/MyOrders/MyOrders';
+import UpdateInformation from './pages/UpdateInformation/UpdateInformation';
 
 function App() {
   return (
@@ -36,6 +38,12 @@ function App() {
             </Route>
             <Route path="/services/confrimOrder/:id">
               <ConfirmOrder></ConfirmOrder>
+            </Route>
+            <Route path="/myOrders">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path="/myOrder/updateInformation/:id">
+              <UpdateInformation></UpdateInformation>
             </Route>
             <Route path="/addNewService">
               <AddNewService></AddNewService>

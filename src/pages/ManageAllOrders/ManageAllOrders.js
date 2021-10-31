@@ -26,7 +26,7 @@ const ManageAllOrders = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(matchedOrder)
+            body: JSON.stringify(matchedOrder[0])
         })
             .then(res => res.json())
             .then(data => {
@@ -62,9 +62,9 @@ const ManageAllOrders = () => {
         <div>
             <NavBar></NavBar>
             <div className="container">
-                <h2 className="text-center my-4 ">Manage All orders</h2>
-                <div className="row my-4 bg-primary text-light py-2">
-                    <div className="col-md-4 border-right text-center">
+                <h2 className="text-center my-3 ">Manage All orders</h2>
+                <div className="row my-3 bg-primary text-light py-2">
+                    <div className="col-md-3 border-right text-center">
                         <h4>Order Title</h4>
                     </div>
                     <div className="col-md-4 text-center">
@@ -73,14 +73,14 @@ const ManageAllOrders = () => {
                     <div className="col-md-2">
                         <h4 className="text-center">Order Status</h4>
                     </div>
-                    <div className="col-md-2">
-                        <h4 className="text-center">Approved ?</h4>
+                    <div className="col-md-3">
+                        <h4 className="text-center">Approved / Delete</h4>
                     </div>
                 </div>
                 <div >
                     {
                         orders.map(order => <div className="row bg-info py-2 mb-3">
-                            <div className="col-md-4 text-center">
+                            <div className="col-md-3 text-center">
                                 <p className="">{order.title}</p>
                                 <p>Cost: {order.cost}</p>
                             </div>
@@ -92,14 +92,14 @@ const ManageAllOrders = () => {
                             <div className="col-md-2">
                                 <p className="text-center text-danger fs-4">{order.orderStatus}</p>
                             </div>
-                            <div className="col-md-2 text-center">
+                            <div className="col-md-3 text-center">
                                 <button
                                     className="btn btn-success"
                                     onClick={() => handleApproveOrder(order._id)}
                                 >Approve</button>
-
+                                <br />
                                 <button
-                                    className="btn btn-danger"
+                                    className="btn btn-danger my-2"
                                     onClick={() => handleDeleteOrder(order._id)}
                                 >Delete</button>
                             </div>

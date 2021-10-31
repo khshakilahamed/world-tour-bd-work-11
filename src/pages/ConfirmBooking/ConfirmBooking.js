@@ -12,13 +12,13 @@ const ConfirmOrder = () => {
     // const [email, setEmail] = useState('');
 
     const [service, setService] = useState({});
-    const nameRef = useRef();
+    // const nameRef = useRef();
     const phoneNumberRef = useRef();
     const addressRef = useRef();
 
 
     const handleConfirm = e => {
-        const userName = nameRef.current.value;
+        const userName = user.displayName;
         const userPhoneNumber = phoneNumberRef.current.value;
         const userEmail = user.email;
         const userAddress = addressRef.current.value;
@@ -28,7 +28,17 @@ const ConfirmOrder = () => {
 
         const orderStatus = "pending";
 
-        const order = { serviceId, orderStatus, userName, userPhoneNumber, userEmail, userAddress, title, cost, country };
+        const order = {
+            serviceId,
+            orderStatus,
+            userName,
+            userPhoneNumber,
+            userEmail,
+            userAddress,
+            title,
+            cost,
+            country
+        };
 
 
 
@@ -73,9 +83,9 @@ const ConfirmOrder = () => {
                         <h4 className="text-center bg-primary text-light py-2">Please, fill up the form</h4>
 
                         <form onSubmit={handleConfirm} className="customer-form">
-                            <input type="text" ref={nameRef} placeholder="Name" required />
+                            <input type="text" value={user.displayName} placeholder="Name" required />
                             <input type="number" ref={phoneNumberRef} name="" id="" placeholder="Phone Number" required />
-                            {/* <input type="email" value={user.email} placeholder="Email Address" required /> */}
+                            <input type="email" value={user.email} placeholder="Email Address" required />
                             <textarea type="text" ref={addressRef} placeholder="Home Address" required />
 
                             <input className="btn btn-warning" type="submit" value="Submit & confirm" />
