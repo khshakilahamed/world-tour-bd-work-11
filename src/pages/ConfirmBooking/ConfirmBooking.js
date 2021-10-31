@@ -1,30 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
 import './ConfirmBooking.css';
 
 const ConfirmOrder = () => {
+
+    const { user } = useAuth();
+
+    // const [email, setEmail] = useState('');
+
     const [service, setService] = useState({});
     const nameRef = useRef();
     const phoneNumberRef = useRef();
-    const emailRef = useRef();
     const addressRef = useRef();
 
 
     const handleConfirm = e => {
         const userName = nameRef.current.value;
         const userPhoneNumber = phoneNumberRef.current.value;
-        const userEmail = emailRef.current.value;
+        const userEmail = user.email;
         const useAddress = addressRef.current.value;
-        const { title, country, _id } = service;
+        const { title, country, _id, cost } = service;
+
         const serviceId = _id;
 
         const orderStatus = "pending";
 
-        const order = { serviceId, orderStatus, userName, userPhoneNumber, userEmail, useAddress, title, country };
+        const order = { serviceId, orderStatus, userName, userPhoneNumber, userEmail, useAddress, title, cost, country };
 
-        // console.log(orderObj);
+
 
         fetch('http://localhost:5000/orders', {
             method: 'POST',
@@ -69,7 +75,7 @@ const ConfirmOrder = () => {
                         <form onSubmit={handleConfirm} className="customer-form">
                             <input type="text" ref={nameRef} placeholder="Name" required />
                             <input type="number" ref={phoneNumberRef} name="" id="" placeholder="Phone Number" required />
-                            <input type="email" ref={emailRef} name="" id="" placeholder="Email Address" required />
+                            {/* <input type="email" value={user.email} placeholder="Email Address" required /> */}
                             <textarea type="text" ref={addressRef} placeholder="Home Address" required />
 
                             <input className="btn btn-warning" type="submit" value="Submit & confirm" />

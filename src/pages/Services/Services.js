@@ -20,7 +20,7 @@ const Services = () => {
                 <div className="service-container">
                     <div className="row">
                         {
-                            services.map(service => <div className="col-md-4 my-3 mb-5 rounded shadow" key={service.key}>
+                            services.map(service => <div className="col-md-4 my-3 mb-5 rounded shadow" key={service._id}>
                                 <div className="img-div">
                                     <img className="rounded" src={service.img} alt="" />
                                 </div>
@@ -33,7 +33,7 @@ const Services = () => {
                                             <p className="bg-secondary rounded text-light px-1 rounded"><small>{service.country}</small></p>
                                         </div>
                                         <Link to={`/services/${service._id}`}>
-                                            <p className="see-more"><span style={{ fontSize: '20px' }}>see more </span><i class="fas fa-arrow-right"></i></p>
+                                            <p className="see-more"><span style={{ fontSize: '20px' }}>see more </span><i className="fas fa-arrow-right"></i></p>
                                         </Link>
                                     </div>
                                     <Link to={`/services/confrimOrder/${service._id}`}>

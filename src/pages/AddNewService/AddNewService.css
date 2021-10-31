@@ -1,0 +1,9 @@
+.add-service-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-service-container input, .add-service-container textarea{
+    margin: 5px 0;
+    padding: 5px;
+}

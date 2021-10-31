@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 
-.user-feedback-container input, textarea{
+.user-feedback-container input, .user-feedback-container textarea{
     width: 100%;
     background: transparent;
     color: white;
