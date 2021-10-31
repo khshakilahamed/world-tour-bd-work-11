@@ -36,7 +36,7 @@ const Services = () => {
                                             <p className="see-more"><span style={{ fontSize: '20px' }}>see more </span><i className="fas fa-arrow-right"></i></p>
                                         </Link>
                                     </div>
-                                    <Link to={`/services/confrimOrder/${service._id}`}>
+                                    <Link to={`/services/confirmOrder/${service._id}`}>
                                         <button className="btn btn-warning mb-3">Booking Now</button>
                                     </Link>
                                 </div>

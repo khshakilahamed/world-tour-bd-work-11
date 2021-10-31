@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
 
@@ -24,7 +25,9 @@ const ServiceDetails = () => {
                         </div>
                         <div className="d-flex justify-content-between">
                             <h2>{service.title}</h2>
-                            <button className="btn btn-warning">Booking now</button>
+                            <Link to={`/services/confrimOrder/${service._id}`}>
+                                <button className="btn btn-warning">Booking now</button>
+                            </Link>
                         </div>
                         <div className="my-4">
                             <h4>Description: </h4>

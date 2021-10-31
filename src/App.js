@@ -30,27 +30,35 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+
             <PrivateRoute exact path="/services">
               <Services></Services>
             </PrivateRoute>
-            <Route exact path="/services/:id">
+
+            <PrivateRoute exact path="/services/:id">
               <ServiceDetails></ServiceDetails>
-            </Route>
-            <Route path="/services/confrimOrder/:id">
+            </PrivateRoute>
+
+            <PrivateRoute path="/services/confirmOrder/:id">
               <ConfirmOrder></ConfirmOrder>
-            </Route>
-            <Route path="/myOrders">
+            </PrivateRoute>
+
+            <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
-            </Route>
-            <Route path="/myOrder/updateInformation/:id">
+            </PrivateRoute>
+
+            <PrivateRoute path="/myOrder/updateInformation/:id">
               <UpdateInformation></UpdateInformation>
-            </Route>
-            <Route path="/addNewService">
+            </PrivateRoute>
+
+            <PrivateRoute path="/addNewService">
               <AddNewService></AddNewService>
-            </Route>
-            <Route path="/manageAllOrders">
+            </PrivateRoute>
+
+            <PrivateRoute path="/manageAllOrders">
               <ManageAllOrders></ManageAllOrders>
-            </Route>
+            </PrivateRoute>
+
             <Route path="*">
               <NotFound></NotFound>
             </Route>
