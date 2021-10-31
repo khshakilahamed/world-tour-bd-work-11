@@ -21,14 +21,14 @@ const ConfirmOrder = () => {
         const userName = nameRef.current.value;
         const userPhoneNumber = phoneNumberRef.current.value;
         const userEmail = user.email;
-        const useAddress = addressRef.current.value;
+        const userAddress = addressRef.current.value;
         const { title, country, _id, cost } = service;
 
         const serviceId = _id;
 
         const orderStatus = "pending";
 
-        const order = { serviceId, orderStatus, userName, userPhoneNumber, userEmail, useAddress, title, cost, country };
+        const order = { serviceId, orderStatus, userName, userPhoneNumber, userEmail, userAddress, title, cost, country };
 
 
 
