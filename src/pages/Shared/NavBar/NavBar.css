@@ -1,0 +1,11 @@
+.project-name{
+    text-decoration: none;
+}
+
+.navItems{
+    text-decoration: none;
+    color: black;
+}
+.navItems:hover{
+    color: hsl(93, 41%, 46%) !important;
+}

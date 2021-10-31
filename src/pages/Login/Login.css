@@ -1,0 +1,42 @@
+.login-bg{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://i.ibb.co/xFzcRTP/header-image.jpg');
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+
+.login-content{
+    background-color: rgba(15, 15, 15, 0.76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid white;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+}
+
+.google-login-btn{
+    background-color: rgb(133, 128, 128);
+    border: none;
+    border-radius: 10px;
+}
+.google-login-btn img{
+    width: 50px;
+    margin: 0 10px;
+}
+.google-login-btn .login-with-google{
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+}
