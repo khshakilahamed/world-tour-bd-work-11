@@ -38,7 +38,7 @@ const UpdateInformation = () => {
 
 
     const handleInformationChange = e => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://frightening-goosebumps-92715.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -59,7 +59,7 @@ const UpdateInformation = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://frightening-goosebumps-92715.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, []);

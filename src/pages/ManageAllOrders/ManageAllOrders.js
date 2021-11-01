@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
     const [isTrue, setIsTrue] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders/')
+        fetch('https://frightening-goosebumps-92715.herokuapp.com/orders/')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isTrue]);
@@ -20,7 +20,7 @@ const ManageAllOrders = () => {
         matchedOrder[0].orderStatus = "Approved";
 
 
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://frightening-goosebumps-92715.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -44,7 +44,7 @@ const ManageAllOrders = () => {
         const proceed = window.confirm("Are your sure? Order will be permanently deleted!");
 
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://frightening-goosebumps-92715.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

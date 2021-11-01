@@ -24,7 +24,7 @@ const AddNewService = () => {
         const procced = window.confirm("Are you sure, you want to add a ew Service ?")
 
         if (procced) {
-            fetch('http://localhost:5000/services', {
+            fetch('https://frightening-goosebumps-92715.herokuapp.com/services', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

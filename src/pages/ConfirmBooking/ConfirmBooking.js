@@ -42,7 +42,7 @@ const ConfirmOrder = () => {
 
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://frightening-goosebumps-92715.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const ConfirmOrder = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://frightening-goosebumps-92715.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, []);
