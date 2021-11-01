@@ -11,3 +11,4 @@
 ### 7. whenever an user book a service, he/she needs to provide some information.
 ### 8. After booked, the user can deleted the booked item and also can updated his/her provided information.
 ### 9. From the Manage All Order, the Booked Items can be approved if the order status looks pending and also can be deleted the booked items.
+### 10. A user can see his/her own orders only, from the my orders
