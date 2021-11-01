@@ -1,8 +1,12 @@
 import React from 'react';
+import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Footer.css';
 
 const Footer = () => {
+    const { user } = useAuth();
+
     return (
         <div className=" text-light bg-dark py-5">
             <div className="container">
@@ -34,8 +38,21 @@ const Footer = () => {
                         <h4 className="text-center text-uppercase mb-3">Quick Links</h4>
                         <div className="quick-links text-center">
                             <Link to="/home" className="navItems text-light">Home</Link>
-                            <Link to="/services" className="navItems text-light">Services</Link>
-                            <Link to="/myOrders" className="navItems text-light">My Orders</Link>
+                            {
+                                user?.email && <Nav.Link >
+                                    <Link to="/myOrders" className="navItems text-light">My Orders</Link>
+                                </Nav.Link>
+                            }
+                            {
+                                user?.email && <Nav.Link >
+                                    <Link to="/manageAllOrders" className="navItems text-light">Manage All Orders</Link>
+                                </Nav.Link>
+                            }
+                            {
+                                user?.email && <Nav.Link >
+                                    <Link to="/addNewService" className="navItems text-light">Add New Service</Link>
+                                </Nav.Link>
+                            }
                             <Link to="/about" className="navItems text-light">About Us</Link>
                         </div>
                     </div>

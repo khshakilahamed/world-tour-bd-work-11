@@ -21,9 +21,7 @@ const NavBar = () => {
                                 <Nav.Link >
                                     <Link to="/home" className="navItems">Home</Link>
                                 </Nav.Link>
-                                <Nav.Link >
-                                    <Link to="/services" className="navItems">Services</Link>
-                                </Nav.Link>
+
                                 {
                                     user?.email && <Nav.Link >
                                         <Link to="/myOrders" className="navItems">My Orders</Link>
