@@ -78,6 +78,11 @@ const ConfirmOrder = () => {
                     <div className="col-md-6">
                         <img className="img-fluid w-100" src={service.img} alt="" />
                         <p className="text-center bg-primary text-light py-2">{service.country}</p>
+                        <div>
+                            <h2>{service.title}</h2>
+                            <h4>Description:</h4>
+                            <p>{service.description}</p>
+                        </div>
                     </div>
                     <div className="col-md-6">
                         <h4 className="text-center bg-primary text-light py-2">Please, fill up the form</h4>
