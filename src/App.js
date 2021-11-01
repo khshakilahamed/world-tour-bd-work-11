@@ -14,6 +14,7 @@ import AddNewService from './pages/AddNewService/AddNewService';
 import ManageAllOrders from './pages/ManageAllOrders/ManageAllOrders';
 import MyOrders from './pages/MyOrders/MyOrders';
 import UpdateInformation from './pages/UpdateInformation/UpdateInformation';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -58,6 +59,10 @@ function App() {
             <PrivateRoute path="/manageAllOrders">
               <ManageAllOrders></ManageAllOrders>
             </PrivateRoute>
+
+            <Route path="/about">
+              <About></About>
+            </Route>
 
             <Route path="*">
               <NotFound></NotFound>
