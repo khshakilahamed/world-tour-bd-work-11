@@ -13,7 +13,7 @@ const NavBar = () => {
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
                     <Container>
                         <Navbar.Brand href="#home" className="text-uppercase">
-                            <span style={{ fontSize: '30px', fontWeight: 'bold' }}> World Tour BD</span>.com
+                            <span style={{ fontSize: '30px', fontWeight: 'bold' }}> World Tour BD</span><span className="text-danger">.com</span>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
