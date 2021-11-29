@@ -67,7 +67,7 @@ const ConfirmOrder = () => {
         fetch(`https://frightening-goosebumps-92715.herokuapp.com/services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
-    }, []);
+    }, [id]);
 
     return (
         <div>

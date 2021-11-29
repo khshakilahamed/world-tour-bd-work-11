@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../Shared/Footer/Footer';
@@ -13,10 +14,10 @@ const MyOrders = () => {
         fetch('https://frightening-goosebumps-92715.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
-                const userMatchedOrder = data?.filter(singleData => singleData?.userEmail == user?.email);
+                const userMatchedOrder = data?.filter(singleData => singleData?.userEmail === user?.email);
                 setOrders(userMatchedOrder);
             })
-    }, [orders, isTrue]);
+    }, [isTrue, setOrders, user?.email]);
 
 
     // delete an order
@@ -60,32 +61,36 @@ const MyOrders = () => {
 
                 {/* display orders */}
                 {
-                    orders.map(order => <div key={order._id} className="row bg-info py-2 mb-3">
-                        <div className="col-md-3 text-center">
-                            <p className="">{order.title}</p>
-                            <p>Cost: {order.cost}</p>
+                    !orders ?
+                        <div className="text-center my-4">
+                            <Spinner animation="border" variant="primary" />
                         </div>
-                        <div className="col-md-4">
-                            <p className="text-center">{order.userAddress}</p>
-                            <p className="text-center">Phone Number: {order.userPhoneNumber}</p>
-                            <p className="text-center">Email: {order.userEmail}</p>
-                        </div>
-                        <div className="col-md-2">
-                            <p className="text-center text-danger fs-4">{order.orderStatus}</p>
-                        </div>
-                        <div className="col-md-3 text-center">
-                            <Link to={`myOrder/updateInformation/${order._id}`}>
-                                <button className="btn btn-success">Update Address</button>
-                            </Link>
-                            <br />
-                            <button
-                                className="btn btn-danger my-2"
-                                onClick={() => handleDeleteOrder(order._id)}
-                            >Delete Order</button>
-                        </div>
-                    </div>)
+                        :
+                        orders.map(order => <div key={order._id} className="row bg-info py-2 mb-3">
+                            <div className="col-md-3 text-center">
+                                <p className="">{order.title}</p>
+                                <p>Cost: {order.cost}</p>
+                            </div>
+                            <div className="col-md-4">
+                                <p className="text-center">{order.userAddress}</p>
+                                <p className="text-center">Phone Number: {order.userPhoneNumber}</p>
+                                <p className="text-center">Email: {order.userEmail}</p>
+                            </div>
+                            <div className="col-md-2">
+                                <p className="text-center text-danger fs-4">{order.orderStatus}</p>
+                            </div>
+                            <div className="col-md-3 text-center">
+                                <Link to={`myOrder/updateInformation/${order._id}`}>
+                                    <button className="btn btn-success">Update Address</button>
+                                </Link>
+                                <br />
+                                <button
+                                    className="btn btn-danger my-2"
+                                    onClick={() => handleDeleteOrder(order._id)}
+                                >Delete Order</button>
+                            </div>
+                        </div>)
                 }
-
             </div>
             <Footer></Footer>
         </div>

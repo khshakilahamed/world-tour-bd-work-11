@@ -62,7 +62,7 @@ const UpdateInformation = () => {
         fetch(`https://frightening-goosebumps-92715.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
-    }, []);
+    }, [id]);
 
     return (
         <div>

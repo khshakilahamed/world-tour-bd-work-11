@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
 
@@ -16,7 +17,7 @@ const ManageAllOrders = () => {
     // Approving order
     const handleApproveOrder = id => {
 
-        const matchedOrder = orders.filter(order => order._id == id);
+        const matchedOrder = orders.filter(order => order._id === id);
         matchedOrder[0].orderStatus = "Approved";
 
 
@@ -79,34 +80,39 @@ const ManageAllOrders = () => {
                 </div>
                 <div >
                     {
-                        orders.map(order => <div className="row bg-info py-2 mb-3">
-                            <div className="col-md-3 text-center">
-                                <p className="">{order.title}</p>
-                                <p>Cost: {order.cost}</p>
-                            </div>
-                            <div className="col-md-4">
-                                <p className="text-center">{order.userAddress}</p>
-                                <p className="text-center">Phone Number: {order.userPhoneNumber}</p>
-                                <p className="text-center">Email: {order.userEmail}</p>
-                            </div>
-                            <div className="col-md-2">
-                                <p className="text-center text-danger fs-4">{order.orderStatus}</p>
-                            </div>
-                            <div className="col-md-3 text-center">
-                                <button
-                                    className="btn btn-success"
-                                    onClick={() => handleApproveOrder(order._id)}
-                                >Approve</button>
-                                <br />
-                                <button
-                                    className="btn btn-danger my-2"
-                                    onClick={() => handleDeleteOrder(order._id)}
-                                >Delete</button>
-                            </div>
-                        </div>)
+                        !orders ? <div className="text-center">
+                            <Spinner animation="border" variant="primary" />
+                        </div>
+                            :
+                            orders.map(order => <div className="row bg-info py-2 mb-3">
+                                <div className="col-md-3 text-center">
+                                    <p className="">{order.title}</p>
+                                    <p>Cost: {order.cost}</p>
+                                </div>
+                                <div className="col-md-4">
+                                    <p className="text-center">{order.userAddress}</p>
+                                    <p className="text-center">Phone Number: {order.userPhoneNumber}</p>
+                                    <p className="text-center">Email: {order.userEmail}</p>
+                                </div>
+                                <div className="col-md-2">
+                                    <p className="text-center text-danger fs-4">{order.orderStatus}</p>
+                                </div>
+                                <div className="col-md-3 text-center">
+                                    <button
+                                        className="btn btn-success"
+                                        onClick={() => handleApproveOrder(order._id)}
+                                    >Approve</button>
+                                    <br />
+                                    <button
+                                        className="btn btn-danger my-2"
+                                        onClick={() => handleDeleteOrder(order._id)}
+                                    >Delete</button>
+                                </div>
+                            </div>)
                     }
                 </div>
             </div>
+
             <Footer></Footer>
         </div>
     );
